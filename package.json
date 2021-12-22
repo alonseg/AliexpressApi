@@ -1,0 +1,23 @@
+{
+  "name": "aliexpress-api",
+  "version": "1.0.0",
+  "description": "A package that wraps Aliexpress API for node",
+  "main": "aliexpress.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "27.1.0"
+  },
+  "keywords": [
+    "aliexpress",
+    "api",
+    "affiliate"
+  ],
+  "author": "Alon Segal",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
