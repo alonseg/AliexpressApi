@@ -1,3 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`aliexpressApiService getAffiliateLinks should call getPromisified with the correct params 1`] = `Array []`;
+exports[`aliexpressApiService getAffiliateLink should call getPromisified with the correct params 1`] = `
+Array [
+  Array [
+    "aliexpress.affiliate.link.generate",
+    Object {
+      "app_signature": "signature",
+      "promotion_link_type": "0",
+      "source_values": "www.test.com",
+      "tracking_id": "trackingId",
+    },
+  ],
+]
+`;
+
+exports[`aliexpressApiService getAffiliateLinks should call getPromisified with the correct params 1`] = `
+Array [
+  Array [
+    "aliexpress.affiliate.link.generate",
+    Object {
+      "app_signature": "signature",
+      "promotion_link_type": "0",
+      "source_values": "www.test.com,www.test2.com",
+      "tracking_id": "trackingId",
+    },
+  ],
+]
+`;
+
+exports[`aliexpressApiService getProductsDetails should call getPromisified with the correct params 1`] = `
+Array [
+  Array [
+    "aliexpress.affiliate.productdetail.get",
+    Object {
+      "app_signature": "signature",
+      "country": "US",
+      "fields": "",
+      "product_ids": "12334,4321",
+      "target_currency": "USD",
+      "target_language": "EN",
+      "tracking_id": "trackingId",
+    },
+  ],
+]
+`;

@@ -43,6 +43,26 @@ module.exports = class AliexpressApiService {
         });
     }
 
+    /**
+     * 
+     * @param {string} url 
+     * @param {string} promotionLinkType 
+     * @returns {Promise}
+     */
+    getAffiliateLink(url, promotionLinkType = '0') {
+        return this.getAffiliateLinks([url], promotionLinkType);
+    }
+    
+    /**
+     * 
+     * @param {Array} ids 
+     * @param {string} fields 
+     * @param {string} country - default is 'US'
+     * @param {string} targetCurrency - default is 'USD'
+     * @param {string} targetLang - default is 'EN'
+     * @returns 
+     */
+    
     getProductsDetails(ids, fields = '', country = 'US', targetCurrency = 'USD', targetLang = 'EN') {
         return this.client.getPromisified('aliexpress.affiliate.productdetail.get', {
             'app_signature': this.appSignature,
@@ -53,15 +73,5 @@ module.exports = class AliexpressApiService {
 	        'tracking_id': this.trackingId,
 	        country
         });
-    }
-
-    /**
-     * 
-     * @param {string} url 
-     * @param {string} promotionLinkType 
-     * @returns {Promise}
-     */
-    getAffiliateLink(url, promotionLinkType = '0') {
-        return this.getAffiliateLinks([url], promotionLinkType);
     }
 }

@@ -21,7 +21,7 @@ npm install aliexpress-api
 
 start by importing
 ```
-import {aliexpress} from 'aliexpress-api';
+const AliexpressApiService = require("./aliexpressApiService");
 
 ...
 
@@ -37,10 +37,13 @@ Alon Segal
 ## Version History
 
 * 1.0
-    * Initial Release - no UT, not all APIs covered
+    * Initial Release - not all APIs covered
 
 ## License
 
 ## Contributing
 
 Feel absolutly free and welcome to contribute in any way :) 
+
+If you have any questions, reach out to me on github,
+or on the FB affiliate group I manage https://www.facebook.com/groups/330128385291320
