@@ -3,6 +3,8 @@ A package that wraps Aliexpress API for node
 
 ## Description
 
+Based on the following API
+https://open.taobao.com/api.htm?docId=48595&docType=2&scopeId=17063
 
 ## Getting Started
 
