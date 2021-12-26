@@ -35,7 +35,7 @@ module.exports = class AliexpressApiService {
      * @returns 
      */
     getAffiliateLinks(urls, promotionLinkType = '0') {
-        return this.client.getPromisified('aliexpress.affiliate.link.generate', {
+        return this.client.executePromisified('aliexpress.affiliate.link.generate', {
             'app_signature': this.appSignature,
             'promotion_link_type': promotionLinkType,
             'source_values': `${urls.join(',')}`,
@@ -64,7 +64,7 @@ module.exports = class AliexpressApiService {
      */
     
     getProductsDetails(ids, fields = '', country = 'US', targetCurrency = 'USD', targetLang = 'EN') {
-        return this.client.getPromisified('aliexpress.affiliate.productdetail.get', {
+        return this.client.executePromisified('aliexpress.affiliate.productdetail.get', {
             'app_signature': this.appSignature,
 	        fields,
 	        'product_ids': `${ids.join(',')}`,
