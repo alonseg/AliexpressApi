@@ -2,7 +2,7 @@
   "name": "aliexpress-api",
   "version": "1.0.1",
   "description": "A package that wraps Aliexpress API for node",
-  "main": "aliexpressApiService.js",
+  "main": "aliexpress/aliexpressApiService.js",
   "scripts": {
     "test": "jest"
   },
