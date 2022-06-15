@@ -37,9 +37,9 @@ module.exports = class AliexpressApiService {
     getAffiliateLinks(urls, promotionLinkType = '0') {
         return this.client.executePromisified('aliexpress.affiliate.link.generate', {
             'app_signature': this.appSignature,
+            'tracking_id': this.trackingId,
             'promotion_link_type': promotionLinkType,
-            'source_values': `${urls.join(',')}`,
-            'tracking_id': this.trackingId
+            'source_values': `${urls.join(',')}`
         });
     }
 
@@ -62,7 +62,6 @@ module.exports = class AliexpressApiService {
      * @param {string} targetLang - default is 'EN'
      * @returns 
      */
-    
     getProductsDetails(ids, fields = '', country = 'US', targetCurrency = 'USD', targetLang = 'EN') {
         return this.client.executePromisified('aliexpress.affiliate.productdetail.get', {
             'app_signature': this.appSignature,
@@ -71,7 +70,6 @@ module.exports = class AliexpressApiService {
 	        'target_currency': targetCurrency,
 	        'target_language': targetLang,
 	        'tracking_id': this.trackingId,
-	        country
         });
     }
 }
