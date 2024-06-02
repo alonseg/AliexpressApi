@@ -1,7 +1,5 @@
-const util = require('util');
+const AliexpressApiWrapper = require('./AliexpressApiWrapper');
 const { ALIEXPRESS_REST_URL } = require('./constants');
-
-TopClient = require('./lib/api/topClient').TopClient;
 
 /**
  * based on https://open.taobao.com/api.htm?docId=48595&docType=2&scopeId=17063
@@ -18,14 +16,7 @@ module.exports = class AliexpressApiService {
         this.appSignature = appSignature;
         this.trackingId = trackingId;
 
-        this.client = new TopClient({
-            'appkey': appkey,
-            'appsecret': appsecret,
-            'REST_URL': ALIEXPRESS_REST_URL
-        });
-        this.client.getPromisified = util.promisify(this.client.get);
-        // uses a post request
-        this.client.executePromisified = util.promisify(this.client.execute);
+        this.client = new AliexpressApiWrapper(appkey, appsecret);
     }
 
     /**
@@ -35,7 +26,8 @@ module.exports = class AliexpressApiService {
      * @returns 
      */
     getAffiliateLinks(urls, promotionLinkType = '0') {
-        return this.client.executePromisified('aliexpress.affiliate.link.generate', {
+        return this.client.callAPI('', {
+            'method': 'aliexpress.affiliate.link.generate',
             'app_signature': this.appSignature,
             'tracking_id': this.trackingId,
             'promotion_link_type': promotionLinkType,
@@ -63,13 +55,14 @@ module.exports = class AliexpressApiService {
      * @returns 
      */
     getProductsDetails(ids, fields = '', country = 'US', targetCurrency = 'USD', targetLang = 'EN') {
-        return this.client.executePromisified('aliexpress.affiliate.productdetail.get', {
+        return this.client.callAPI('', {
+            'method': 'aliexpress.affiliate.productdetail.get',
             'app_signature': this.appSignature,
-	        fields,
-	        'product_ids': `${ids.join(',')}`,
-	        'target_currency': targetCurrency,
-	        'target_language': targetLang,
-	        'tracking_id': this.trackingId,
+            fields,
+            'product_ids': `${ids.join(',')}`,
+            'target_currency': targetCurrency,
+            'target_language': targetLang,
+            'tracking_id': this.trackingId,
         });
     }
 }

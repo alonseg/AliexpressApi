@@ -4,7 +4,7 @@ A package that wraps Aliexpress API for node
 ## Description
 
 Based on the following API
-https://open.taobao.com/api.htm?docId=48595&docType=2&scopeId=17063
+https://openservice.aliexpress.com/doc/doc.htm?spm=a2o9m.11193535.0.0.13e959b2203wJQ&nodeId=27493&docId=118729#/?docId=1366
 
 ## Getting Started
 
@@ -40,6 +40,8 @@ Alon Segal
 
 * 1.0
     * Initial Release - not all APIs covered
+* 1.2.0
+    * migrated to use new Aliexpress enpoint and standards 
 
 ## License
 

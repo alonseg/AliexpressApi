@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AliexpressApiWrapper should make the API call correctly 1`] = `
+{
+  "options": {
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "method": "GET",
+  },
+  "url": "https://api-sg.aliexpress.com/sync/some/api/path?app_key=appKey&timestamp=123456789&sign_method=sha256&param1=value1&param2=value2&sign=HASH",
+}
+`;
