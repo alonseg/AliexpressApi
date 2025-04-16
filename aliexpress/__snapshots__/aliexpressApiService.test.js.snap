@@ -26,6 +26,17 @@ exports[`aliexpressApiService getAffiliateLinks should call getPromisified with 
 ]
 `;
 
+exports[`aliexpressApiService getFeaturedPromoInfo should call getPromisified with the correct params 1`] = `
+[
+  "",
+  {
+    "app_signature": "signature",
+    "method": "aliexpress.affiliate.featuredpromo.get",
+    "tracking_id": "trackingId",
+  },
+]
+`;
+
 exports[`aliexpressApiService getProductsDetails should call getPromisified with the correct params 1`] = `
 [
   "",

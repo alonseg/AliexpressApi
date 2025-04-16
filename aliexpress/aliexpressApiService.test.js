@@ -40,4 +40,12 @@ describe('aliexpressApiService', () => {
             expect(aliexpress.client.callAPI.mock.calls.pop()).toMatchSnapshot();
         });
     });
+
+    describe('getFeaturedPromoInfo', () => {
+        it('should call getPromisified with the correct params', () => {
+            const aliexpress = new AliexpressApiService('key', 'secret', 'signature', 'trackingId');
+            aliexpress.getFeaturedPromoInfo();
+            expect(aliexpress.client.callAPI.mock.calls.pop()).toMatchSnapshot();
+        }); 
+    });
 });

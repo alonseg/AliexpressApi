@@ -65,4 +65,12 @@ module.exports = class AliexpressApiService {
             'tracking_id': this.trackingId,
         });
     }
+
+    getFeaturedPromoInfo() {
+        return this.client.callAPI('', {
+            'method': 'aliexpress.affiliate.featuredpromo.get',
+            'app_signature': this.appSignature,
+            'tracking_id': this.trackingId,
+        });
+    }
 }
