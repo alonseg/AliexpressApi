@@ -36,6 +36,66 @@ const aliexpressApiService = new AliexpressApiService(
 const affiliateLink = await aliexpressApiService.getAffiliateLink(aliexpressUrl);
 ```
 
+## Available API Functions
+
+### Affiliate Links
+
+#### `getAffiliateLink(url, promotionLinkType = '0')`
+Generate an affiliate link for a single product URL.
+
+**Parameters:**
+- `url` (string): The Aliexpress product URL
+- `promotionLinkType` (string): Type of promotion link (default: '0')
+
+#### `getAffiliateLinks(urls, promotionLinkType = '0')`
+Generate affiliate links for multiple product URLs.
+
+**Parameters:**
+- `urls` (Array): Array of Aliexpress product URLs
+- `promotionLinkType` (string): Type of promotion link (default: '0')
+
+### Product Information
+
+#### `getProductsDetails(ids, fields = '', country = 'US', targetCurrency = 'USD', targetLang = 'EN')`
+Get detailed information about specific products.
+
+**Parameters:**
+- `ids` (Array): Array of product IDs
+- `fields` (string): Comma-separated list of fields to return
+- `country` (string): Target country code (default: 'US')
+- `targetCurrency` (string): Target currency (default: 'USD')
+- `targetLang` (string): Target language (default: 'EN')
+
+#### `getHotProducts(options = {})`
+Get trending/hot products from Aliexpress.
+
+**Options:**
+- `category_ids` (string): List of category IDs
+- `fields` (string): Response parameter list (e.g. 'commission_rate,sale_price')
+- `keywords` (string): Filter products by keywords
+- `max_sale_price` (number): Filter products by highest price (in cents)
+- `min_sale_price` (number): Filter products by lowest price (in cents)
+- `page_no` (number): Page number (default: 1)
+- `page_size` (number): Record count per page (1-50, default: 20)
+- `platform_product_type` (string): Product type: ALL, PLAZA, TMALL
+- `sort` (string): Sort by: SALE_PRICE_ASC, SALE_PRICE_DESC, LAST_VOLUME_ASC, LAST_VOLUME_DESC
+- `target_currency` (string): Target currency (e.g. USD, GBP, CAD, EUR)
+- `target_language` (string): Target language (e.g. EN, RU, PT, ES)
+- `delivery_days` (string): Estimated delivery days (3, 5, 7, 10)
+- `ship_to_country` (string): Ship to country code
+- `promotion_name` (string): Promotion name
+
+#### `getProducts(options = {})`
+Search for products on Aliexpress.
+
+**Options:**
+Same as `getHotProducts` options.
+
+### Promotions
+
+#### `getFeaturedPromoInfo()`
+Get information about featured promotions.
+
 ## Configuration
 
 You'll need the following credentials from Aliexpress Open Platform:
