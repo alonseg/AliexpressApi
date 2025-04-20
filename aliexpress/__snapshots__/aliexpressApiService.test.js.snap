@@ -37,6 +37,47 @@ exports[`aliexpressApiService getFeaturedPromoInfo should call getPromisified wi
 ]
 `;
 
+exports[`aliexpressApiService getHotProducts should call getPromisified with default params when no options provided 1`] = `
+[
+  "",
+  {
+    "app_signature": "signature",
+    "method": "aliexpress.affiliate.hotproduct.query",
+    "page_no": "1",
+    "page_size": "20",
+    "ship_to_country": "US",
+    "target_currency": "USD",
+    "target_language": "EN",
+    "tracking_id": "trackingId",
+  },
+]
+`;
+
+exports[`aliexpressApiService getHotProducts should call getPromisified with the correct params 1`] = `
+[
+  "",
+  {
+    "app_signature": "signature",
+    "category_ids": "123,456",
+    "delivery_days": "7",
+    "fields": "commission_rate,sale_price",
+    "keywords": "phone",
+    "max_sale_price": "10000",
+    "method": "aliexpress.affiliate.hotproduct.query",
+    "min_sale_price": "1000",
+    "page_no": "1",
+    "page_size": "20",
+    "platform_product_type": "ALL",
+    "promotion_name": "Summer Sale",
+    "ship_to_country": "US",
+    "sort": "SALE_PRICE_DESC",
+    "target_currency": "USD",
+    "target_language": "EN",
+    "tracking_id": "trackingId",
+  },
+]
+`;
+
 exports[`aliexpressApiService getProductsDetails should call getPromisified with the correct params 1`] = `
 [
   "",
